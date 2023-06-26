@@ -508,12 +508,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 866dc274f6d5912468346d64a4e44612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topCollider: {fileID: 0}
-  smoothTime: 0.1
-  height: 80
-  angle: 90
-  horizontalLookAhead: 5
-  verticalLookAhead: 5
+  _smoothTime: 0.2
+  _height: 70
+  _angle: 90
+  _horizontalLookAhead: 18
+  _verticalLookAhead: 18
 --- !u!1 &1254341289
 GameObject:
   m_ObjectHideFlags: 0
