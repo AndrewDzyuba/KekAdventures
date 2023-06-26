@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd7cc7719a6ee34a8e24848181755a2, type: 3}
+  m_Name: GrenadesData
+  m_EditorClassIdentifier: 
+  _grenadesDatas:
+  - type: 0
+    material: {fileID: 0}
+    icon: {fileID: 21300000, guid: ccf41ba3e7f6bd541bd0bbc8ae157536, type: 3}
+  - type: 1
+    material: {fileID: 0}
+    icon: {fileID: 21300000, guid: 757339a6fbbb03b449dd2a169c49a586, type: 3}
+  - type: 2
+    material: {fileID: 0}
+    icon: {fileID: 21300000, guid: 2bb31f8a14db7454e90871bf8974be50, type: 3}

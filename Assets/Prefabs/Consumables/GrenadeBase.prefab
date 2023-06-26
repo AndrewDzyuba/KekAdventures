@@ -9,8 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3776271803833500471}
+  - component: {fileID: 5713941886210186118}
+  - component: {fileID: 446219235}
   m_Layer: 0
-  m_Name: Grenade
+  m_Name: GrenadeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,8 +32,37 @@ Transform:
   m_Children:
   - {fileID: 7778199149111482010}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5713941886210186118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535194021490565897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b03b591258c7840b49250b2bcf40f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sphereCollider: {fileID: 446219235}
+  _takeRadius: 3
+  _type: 0
+  _renderer: {fileID: 6526949997315387675}
+--- !u!135 &446219235
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535194021490565897}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.68
+  m_Center: {x: 0, y: 1.56, z: 0}
 --- !u!1001 &7816858720078688625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167,6 +198,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 973834fc220282e4cb42ee1f2147a8b1, type: 3}
+--- !u!23 &6526949997315387675 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -5264868596759396246, guid: 973834fc220282e4cb42ee1f2147a8b1, type: 3}
+  m_PrefabInstance: {fileID: 7816858720078688625}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7778199149111482010 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 973834fc220282e4cb42ee1f2147a8b1, type: 3}
