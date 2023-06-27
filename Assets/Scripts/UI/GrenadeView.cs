@@ -11,24 +11,28 @@ namespace UI
 {
     public class GrenadeView : MonoBehaviour
     {
-        [Inject] private PlayerAmmo _playerAmmo;
-        [Inject] private GrenadesData _grenadesData;
-        
         [SerializeField] private GrenadeType _type;
         [SerializeField] private  TextMeshProUGUI _amount;
         [SerializeField] private  Image _icon;
+        [SerializeField] private  Image _glow;
 
+        [Inject] private PlayerAmmo _playerAmmo;
+        [Inject] private GrenadesData _grenadesData;
+        
         private void Start()
         {
             SetIcon();
             UpdateAmount();
+            UpdateChoosedGrenade();
             
-            _playerAmmo.OnGrenadesChange += UpdateAmount;
+            _playerAmmo.OnGrenadesAmountChange += UpdateAmount;
+            _playerAmmo.OnGrenadeChoose += UpdateChoosedGrenade;
         }
 
         private void OnDestroy()
         {
-            _playerAmmo.OnGrenadesChange -= UpdateAmount;
+            _playerAmmo.OnGrenadesAmountChange -= UpdateAmount;
+            _playerAmmo.OnGrenadeChoose -= UpdateChoosedGrenade;
         }
 
         private void SetIcon()
@@ -41,6 +45,11 @@ namespace UI
         {
             var text = _playerAmmo.GrenadeAmmos[_type].ToString();
             _amount.text = text;
+        }
+
+        private void UpdateChoosedGrenade()
+        {
+            _glow.enabled = _playerAmmo.ChoosedGreande == _type;
         }
     }
 }

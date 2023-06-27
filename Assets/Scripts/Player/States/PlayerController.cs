@@ -19,15 +19,19 @@ namespace Player
 
         void Update()
         {
-            _horizontalMove = Input.GetAxisRaw("Sides");
-            _frontMove = Input.GetAxisRaw("Front");
+            _horizontalMove = Input.GetAxisRaw(InputSettings.SIDES_AXES);
+            _frontMove = Input.GetAxisRaw(InputSettings.FRONT_AXES);
         }
 
         void FixedUpdate()
         {
             HandleAxes();
-            HandleMoving();
             HandleRotation();
+
+            if (Input.GetKey(InputSettings.FIRE))
+                HandleAiming();
+            else
+                HandleMoving();
         }
 
         private void HandleAxes()
@@ -49,6 +53,11 @@ namespace Player
             var characterScreenPos = Camera.main.WorldToScreenPoint(transform.position);
             var direction = Mathf.Atan2(Input.mousePosition.y - characterScreenPos.y, Input.mousePosition.x - characterScreenPos.x);
             _rigidBody.MoveRotation(Quaternion.Euler(0f, -Mathf.Rad2Deg * direction, 0f));
+        }
+
+        private void HandleAiming()
+        {
+            
         }
     }
 }

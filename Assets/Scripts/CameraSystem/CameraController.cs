@@ -9,7 +9,7 @@ namespace CameraSystem
 {
     public class CameraController : MonoBehaviour
     {
-        [Inject] private PlayerController _playerController;
+        [Inject] private PlayerStateController _playerController;
 
         private Vector3 currentVelocity;
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6910913852475891960}
   - component: {fileID: 2053477839}
   - component: {fileID: 6698423910538510235}
-  - component: {fileID: 2080670831376988492}
+  - component: {fileID: 8072625339527057986}
   - component: {fileID: 1706981202}
   m_Layer: 0
   m_Name: Player
@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 6368871581294179536}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2053477839
 Rigidbody:
@@ -65,7 +65,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.1439934, y: 11.422804, z: 13.15162}
   m_Center: {x: 0.2502823, y: 5.6735125, z: 0.5782666}
---- !u!114 &2080670831376988492
+--- !u!114 &8072625339527057986
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,11 +74,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6910913852475891963}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 350f81a68faf3eb4b880ac575049b69e, type: 3}
+  m_Script: {fileID: 11500000, guid: 48de1c765c6ddb94c912c3469b003f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 2053477839}
-  _runSpeed: 30
 --- !u!114 &1706981202
 MonoBehaviour:
   m_ObjectHideFlags: 0

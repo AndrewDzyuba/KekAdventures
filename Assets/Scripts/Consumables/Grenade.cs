@@ -8,6 +8,8 @@ namespace Consumables
 {
     public class Grenade : MonoBehaviour
     {
+        public Action OnTake;
+        
         [SerializeField] private SphereCollider _sphereCollider;
         [SerializeField] private float _takeRadius = 3f;
         [SerializeField] private GrenadeType _type;
@@ -30,6 +32,12 @@ namespace Consumables
             TryTake(collider);
         }
 
+        public void Init(GrenadeType type, Material material)
+        {
+            _type = type;
+            _renderer.material = material;
+        }
+
         private void HandleRotation()
         {
             transform.Rotate(new Vector3(0, _rotationSpeed * Time.deltaTime, 0));
@@ -41,8 +49,8 @@ namespace Consumables
             if (playerAmmo == null)
                 return;
             
+            OnTake?.Invoke();
             playerAmmo.TakeGrenade(_type);
-            Destroy(gameObject);
         }
     }
 }

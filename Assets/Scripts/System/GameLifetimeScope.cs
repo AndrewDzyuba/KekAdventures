@@ -11,8 +11,8 @@ public class GameLifetimeScope : LifetimeScope
     
     protected override void Configure(IContainerBuilder builder)
     {
-        builder.RegisterComponentInHierarchy<PlayerController>();
-        builder.RegisterComponentInHierarchy<PlayerController>();
+        builder.RegisterComponentInHierarchy<PlayerStateController>();
+        builder.RegisterComponentInHierarchy<CameraController>();
         builder.RegisterComponentInHierarchy<PlayerAmmo>();
         
         builder.RegisterInstance(_grenadesData);
