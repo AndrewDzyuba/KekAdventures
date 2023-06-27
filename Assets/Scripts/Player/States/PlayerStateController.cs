@@ -1,46 +1,48 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStateController : MonoBehaviour
+namespace Player.States
 {
-    [SerializeField] private Rigidbody _rigidBody;
+    public class PlayerStateController : MonoBehaviour
+    {
+        [SerializeField] public Rigidbody rigidBody;
+        [SerializeField] public LineRenderer lineRenderer;
 
-    public PlayerMovingState MovingState { get; private set; } = new PlayerMovingState();
-    public PlayerAimingState AimingState { get; private set; } = new PlayerAimingState();
+        public PlayerMovingState MovingState { get; private set; } = new PlayerMovingState();
+        public PlayerAimingState AimingState { get; private set; } = new PlayerAimingState();
     
-    private ICharacterState _currentState;
+        private ICharacterState _currentState;
 
-    private void Start()
-    {
-        ChangeState(MovingState);
-    }
+        private void Start()
+        {
+            ChangeState(MovingState);
+        }
     
-    private void Update()
-    {
-        if (_currentState != null)
+        private void Update()
         {
-            _currentState.UpdateState(this, _rigidBody, transform);
+            if (_currentState != null)
+            {
+                _currentState.UpdateState(this);
+            }
         }
-    }
 
-    private void FixedUpdate()
-    {
-        if (_currentState != null)
+        private void FixedUpdate()
         {
-            _currentState.FixedUpdateState(this, _rigidBody, transform);
+            if (_currentState != null)
+            {
+                _currentState.FixedUpdateState(this);
+            }
         }
-    }
 
-    public void ChangeState(ICharacterState newState)
-    {
-        if (_currentState != null)
+        public void ChangeState(ICharacterState newState)
         {
-            _currentState.OnExit(this);
-        }
+            if (_currentState != null)
+            {
+                _currentState.OnExit(this);
+            }
         
-        _currentState = newState;
-        _currentState.OnEnter(this, _rigidBody);
+            _currentState = newState;
+            _currentState.OnEnter(this);
+        }
     }
 }

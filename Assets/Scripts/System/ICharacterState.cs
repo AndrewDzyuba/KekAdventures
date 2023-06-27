@@ -1,12 +1,13 @@
+using Player.States;
 using UnityEngine;
 
 namespace System
 {
     public interface ICharacterState
     {
-        public void OnEnter(PlayerStateController controller, Rigidbody rigidBody);
-        public void UpdateState(PlayerStateController controller, Rigidbody rigidBody, Transform transform);
-        public void FixedUpdateState(PlayerStateController controller, Rigidbody rigidBody, Transform transform);
+        public void OnEnter(PlayerStateController controller);
+        public void UpdateState(PlayerStateController controller);
+        public void FixedUpdateState(PlayerStateController controller);
         public void OnExit(PlayerStateController controller);
     }
 }
