@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118082386}
   m_LocalRotation: {x: 0.30618626, y: 0.1767767, z: 0.1767767, w: 0.91855866}
-  m_LocalPosition: {x: 0, y: 7.11, z: 0}
+  m_LocalPosition: {x: 4.56, y: 7.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1984017761}
   - component: {fileID: 1984017763}
-  - component: {fileID: 1984017762}
   m_Layer: 0
   m_Name: TrajectoryRenderer
   m_TagString: Untagged
@@ -167,23 +166,6 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &1984017762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984017760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7997d51ababcca44bb8a46b8f6205d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _startPosition: {x: 0, y: 0, z: 0}
-  _startVelocity: {x: 0, y: 0, z: 0}
-  _trajectoryVertDist: 0.25
-  _maxCurveLength: 5
-  _debugAlwaysDrawTrajectory: 0
 --- !u!1 &6910913852475891963
 GameObject:
   m_ObjectHideFlags: 0
