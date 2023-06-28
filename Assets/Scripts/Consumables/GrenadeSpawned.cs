@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Consumables
 {
-    public class Grenade : MonoBehaviour
+    public class GrenadeSpawned : MonoBehaviour
     {
         public Action OnTake;
         

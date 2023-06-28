@@ -11,8 +11,8 @@ public class GrenadesData : ScriptableObject
     public List<GrenadeData> GrenadesDatas => _grenadesDatas;
     [SerializeField] private List<GrenadeData> _grenadesDatas = new List<GrenadeData>();
 
-    public Grenade SpawnPrefab => _spawnPrefab;
-    [SerializeField] private Grenade _spawnPrefab;
+    public GrenadeSpawned SpawnPrefab => _spawnPrefab;
+    [SerializeField] private GrenadeSpawned _spawnPrefab;
     
     public GrenadeThrow ThrowPrefab => _throwPrefab;
     [SerializeField] private GrenadeThrow _throwPrefab;

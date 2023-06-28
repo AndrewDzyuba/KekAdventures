@@ -50,6 +50,8 @@ MonoBehaviour:
   _rigidbody: {fileID: 5788620431980251994}
   _renderer: {fileID: 985243565244520791}
   _explosionPrefab: {fileID: 6667132181272300233, guid: 5fc028eba0a77b24e921ae6e470193b2, type: 3}
+  _explosionRadius: 30
+  _damage: 45
 --- !u!135 &6284821373185633199
 SphereCollider:
   m_ObjectHideFlags: 0

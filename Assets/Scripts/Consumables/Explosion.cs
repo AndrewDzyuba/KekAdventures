@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
+    private readonly WaitForSeconds _despawnDelay = new WaitForSeconds(2f);
+    
     [SerializeField] private ParticleSystem _particleSystem;
-
-    private WaitForSeconds _despawnDelay = new WaitForSeconds(2f);
     
     public void Init(Color color)
     {

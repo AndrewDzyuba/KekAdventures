@@ -10,10 +10,11 @@ namespace Consumables
 {
     public class GrenadesSpawner : MonoBehaviour
     {
+        private readonly WaitForSeconds _spawnDelay = new WaitForSeconds(5f);
+        
         [Inject] private GrenadesData _grenadesData;
-
-        private WaitForSeconds _spawnDelay = new WaitForSeconds(5f);
-        private Grenade _grenade;
+        
+        private GrenadeSpawned _grenadeSpawned;
 
         private void Start()
         {
@@ -23,15 +24,15 @@ namespace Consumables
         private void InstantiateOnStart()
         {
             var prefab = _grenadesData.SpawnPrefab;
-            _grenade = Instantiate(prefab, transform.position, Quaternion.identity, transform);
+            _grenadeSpawned = Instantiate(prefab, transform.position, Quaternion.identity, transform);
             InitGrenade();
 
-            _grenade.OnTake += OnTake;
+            _grenadeSpawned.OnTake += OnTake;
         }
 
         private void OnTake()
         {
-            _grenade.gameObject.SetActive(false);
+            _grenadeSpawned.gameObject.SetActive(false);
             StartCoroutine(SpawnCoroutine());
         }
 
@@ -39,7 +40,7 @@ namespace Consumables
         {
             yield return _spawnDelay;
 
-            _grenade.gameObject.SetActive(true);
+            _grenadeSpawned.gameObject.SetActive(true);
             InitGrenade();
         }
 
@@ -47,8 +48,7 @@ namespace Consumables
         {
             var randomType = (GrenadeType)UnityEngine.Random.Range(0, Enum.GetValues(typeof(GrenadeType)).Length);
             var grenadeMaterial = _grenadesData.GetGrenadeData(randomType).material;
-            _grenade.Init(randomType, grenadeMaterial);
+            _grenadeSpawned.Init(randomType, grenadeMaterial);
         }
-        
     }
 }
