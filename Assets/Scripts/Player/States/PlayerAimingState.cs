@@ -25,7 +25,7 @@ namespace Player.States
             if (CheckFireButton(controller, launchVelocity))
                 return;
 
-            Visualize(launchVelocity, mouseWorldPos, controller.throwTransform.position, controller.lineRenderer);
+            VisualizeTrajectory(launchVelocity, mouseWorldPos, controller.throwTransform.position, controller.lineRenderer);
         }
 
         public void FixedUpdateState(PlayerStateController controller)
@@ -61,7 +61,7 @@ namespace Player.States
             return initialVelocityX + initialVelocityY;
         }
 
-        private void Visualize(Vector3 velocity0, Vector3 finalPos, Vector3 playerPos, LineRenderer lineRenderer)
+        private void VisualizeTrajectory(Vector3 velocity0, Vector3 finalPos, Vector3 playerPos, LineRenderer lineRenderer)
         {
             for (int i = 0; i < _lineSegments - 1; i++)
             {
@@ -99,15 +99,18 @@ namespace Player.States
             if (Input.GetKeyUp(InputSettings.FIRE))
             {
                 controller.ChangeState(controller.MovingState);
-                ThrowGrenade(controller, launchVelocity);
+                TryThrowGrenade(controller, launchVelocity);
                 return true;
             }
 
             return false;
         }
         
-        private void ThrowGrenade(PlayerStateController controller, Vector3 launchVelocity)
+        private void TryThrowGrenade(PlayerStateController controller, Vector3 launchVelocity)
         {
+            if (!controller.PlayerAmmo.TrySpendGrenade())
+                return;
+            
             var prefab = controller.GrenadesData.ThrowPrefab;
             var grenade = Pooling.Spawn(prefab.gameObject, controller.throwTransform.position, controller.throwTransform.rotation).GetComponent<GrenadeThrow>();
 

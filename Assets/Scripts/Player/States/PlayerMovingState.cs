@@ -60,7 +60,7 @@ namespace Player.States
 
         private void CheckFireButton(PlayerStateController controller)
         {
-            if (Input.GetKeyDown(InputSettings.FIRE))
+            if (Input.GetKeyDown(InputSettings.FIRE) && controller.PlayerAmmo.HaveGrenadeOfSelectedType())
                 controller.ChangeState(controller.AimingState);
         }
     }

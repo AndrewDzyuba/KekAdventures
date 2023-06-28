@@ -33,12 +33,21 @@ namespace Player
         {
             _grenadeAmmos[type]++;
             OnGrenadesAmountChange?.Invoke();
-        }        
-        
-        public void Throw(GrenadeType type)
+        }
+
+        public bool HaveGrenadeOfSelectedType()
         {
-            _grenadeAmmos[type]--;
+            return GrenadeAmmos[ChoosedGreande] > 0;
+        }
+
+        public bool TrySpendGrenade()
+        {
+            if (GrenadeAmmos[ChoosedGreande] <= 0)
+                return false;
+
+            GrenadeAmmos[ChoosedGreande]--;
             OnGrenadesAmountChange?.Invoke();
+            return true;
         }
 
         private void Update()
