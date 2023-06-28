@@ -27,12 +27,12 @@ namespace Player
             
             if (Input.GetKey(InputSettings.FIRE) || _debugAlwaysDrawTrajectory)
             {
-                DrawTrajectory();
+                //DrawTrajectory();
             }
             
             if (Input.GetKeyUp(InputSettings.FIRE) && !_debugAlwaysDrawTrajectory)
             {
-                ClearTrajectory();
+                //ClearTrajectory();
             }
         }
 
