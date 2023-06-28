@@ -9,6 +9,7 @@ using VContainer.Unity;
 public class GameLifetimeScope : LifetimeScope
 {
     [SerializeField] private GrenadesData _grenadesData;
+    [SerializeField] private EnemiesData _enemiesData;
     
     protected override void Configure(IContainerBuilder builder)
     {
@@ -17,5 +18,6 @@ public class GameLifetimeScope : LifetimeScope
         builder.RegisterComponentInHierarchy<PlayerAmmo>();
         
         builder.RegisterInstance(_grenadesData);
+        builder.RegisterInstance(_enemiesData);
     }
 }

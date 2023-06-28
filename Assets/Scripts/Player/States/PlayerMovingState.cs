@@ -9,8 +9,7 @@ namespace Player.States
         private float _frontMove;
     
         private float _moveLimiter = 0.7f;
-        private float _rotationSpeed = 600f;
-        private float _runSpeed = 20.0f;
+        private float _runSpeed = 30.0f;
     
         public void OnEnter(PlayerStateController controller)
         {

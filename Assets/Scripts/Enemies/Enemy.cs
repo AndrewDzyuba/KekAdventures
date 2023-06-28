@@ -7,15 +7,16 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private int _maxHP = 100;
+    public Action OnDie;
+    
     [SerializeField] private HPCanvas _hpCanvas;
 
     private int _currentHP = 100;
-    
-    private void Start()
+
+    public void Init(int maxHP)
     {
-        _currentHP = _maxHP;
-        _hpCanvas.Init(_maxHP);
+        _currentHP = maxHP;
+        _hpCanvas.Init(maxHP);
     }
 
     public void ApplyDamage(int damage)
@@ -33,6 +34,7 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        OnDie?.Invoke();
+        gameObject.SetActive(false);
     }
 }

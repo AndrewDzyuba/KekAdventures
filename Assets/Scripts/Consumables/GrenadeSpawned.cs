@@ -51,6 +51,7 @@ namespace Consumables
             
             OnTake?.Invoke();
             playerAmmo.TakeGrenade(_type);
+            gameObject.SetActive(false);
         }
     }
 }

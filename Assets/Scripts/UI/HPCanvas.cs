@@ -46,5 +46,4 @@ public class HPCanvas : MonoBehaviour
         
         _damageCaption.enabled = false;
     }
-    
 }
