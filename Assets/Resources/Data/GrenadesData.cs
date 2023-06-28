@@ -11,8 +11,11 @@ public class GrenadesData : ScriptableObject
     public List<GrenadeData> GrenadesDatas => _grenadesDatas;
     [SerializeField] private List<GrenadeData> _grenadesDatas = new List<GrenadeData>();
 
-    public Grenade Prefab => _prefab;
-    [SerializeField] private Grenade _prefab;
+    public Grenade SpawnPrefab => _spawnPrefab;
+    [SerializeField] private Grenade _spawnPrefab;
+    
+    public GrenadeThrow ThrowPrefab => _throwPrefab;
+    [SerializeField] private GrenadeThrow _throwPrefab;
 
     public GrenadeData GetGrenadeData(GrenadeType type)
     {
@@ -24,6 +27,7 @@ public class GrenadesData : ScriptableObject
     {
         public GrenadeType type;
         public Material material;
+        public Color explosionColor;
         public Sprite icon;
     }
 }

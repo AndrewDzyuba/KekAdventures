@@ -22,7 +22,7 @@ namespace Consumables
 
         private void InstantiateOnStart()
         {
-            var prefab = _grenadesData.Prefab;
+            var prefab = _grenadesData.SpawnPrefab;
             _grenade = Instantiate(prefab, transform.position, Quaternion.identity, transform);
             InitGrenade();
 

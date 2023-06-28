@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5713941886210186118}
   - component: {fileID: 446219235}
   m_Layer: 0
-  m_Name: GrenadeBase
+  m_Name: GrenadeSpawned
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

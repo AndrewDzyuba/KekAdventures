@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using VContainer;
 
 namespace Player.States
 {
@@ -7,10 +8,17 @@ namespace Player.States
     {
         [SerializeField] public Rigidbody rigidBody;
         [SerializeField] public LineRenderer lineRenderer;
+        [SerializeField] public Transform throwTransform;
 
         public PlayerMovingState MovingState { get; private set; } = new PlayerMovingState();
         public PlayerAimingState AimingState { get; private set; } = new PlayerAimingState();
-    
+        
+        [Inject] private GrenadesData _grenadesData;
+        public GrenadesData GrenadesData => _grenadesData;
+        
+        [Inject] private PlayerAmmo _playerAmmo;
+        public PlayerAmmo PlayerAmmo => _playerAmmo;
+        
         private ICharacterState _currentState;
 
         private void Start()

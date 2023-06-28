@@ -15,11 +15,15 @@ MonoBehaviour:
   _grenadesDatas:
   - type: 0
     material: {fileID: 2100000, guid: 6b1cb5274c49d914dace6dcc1fcef42a, type: 2}
+    explosionColor: {r: 0.38043946, g: 0.9433962, b: 0.24385896, a: 1}
     icon: {fileID: 21300000, guid: ccf41ba3e7f6bd541bd0bbc8ae157536, type: 3}
   - type: 1
     material: {fileID: 2100000, guid: 1fe403d747e97e0428a3cb1b569639e3, type: 2}
+    explosionColor: {r: 0, g: 0.57222366, b: 1, a: 1}
     icon: {fileID: 21300000, guid: 757339a6fbbb03b449dd2a169c49a586, type: 3}
   - type: 2
     material: {fileID: 2100000, guid: 4237b7dfa98f9df448c027604b6773fb, type: 2}
+    explosionColor: {r: 1, g: 0.07924521, b: 0.07924521, a: 1}
     icon: {fileID: 21300000, guid: 2bb31f8a14db7454e90871bf8974be50, type: 3}
-  _prefab: {fileID: 5713941886210186118, guid: e56d3fbd074992e4286c8193bc687fe1, type: 3}
+  _spawnPrefab: {fileID: 5713941886210186118, guid: e56d3fbd074992e4286c8193bc687fe1, type: 3}
+  _throwPrefab: {fileID: 7490196168024180631, guid: 153568da5d2f3f74483016889166b814, type: 3}
